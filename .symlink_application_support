@@ -9,11 +9,12 @@ for path in "$SYNCED_APPLICATION_SUPPORT_DIR"/*; do
   subdir="${path%/*}"
   basename="${path##*/}"
   if [ -e "$APPLICATION_SUPPORT_DIR/$basename" ]; then
-    echo Skipping $basename since it already exists locally
-  else
-    echo Symlinking $basename
-    ln -s "$subdir/$basename" "$APPLICATION_SUPPORT_DIR/$basename"
+    # echo Skipping $basename since it already exists locally
+    echo Removing local $basename
+    rm -rf "$APPLICATION_SUPPORT_DIR/$basename"
   fi
+  echo Symlinking $basename
+  ln -s "$subdir/$basename" "$APPLICATION_SUPPORT_DIR/$basename"
 done
 
 echo Application Support directories symlinked successfully.
