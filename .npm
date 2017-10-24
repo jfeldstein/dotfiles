@@ -1,7 +1,5 @@
 npm install -g \
-  grunt-cli \
-  gulp-cli \
-  karma-cli \
+  nyc \
   npm-check-updates \
   trash-cli \
   eslint
