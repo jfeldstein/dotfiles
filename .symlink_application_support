@@ -1,5 +1,5 @@
-USERNAME=d4
-DROPBOX_DIR=/Users/$USERNAME/Dropbox
+USERNAME=$(whoami)
+DROPBOX_DIR=/Users/$USERNAME/Google\ Drive
 SYNCED_APPLICATION_SUPPORT_DIR=$DROPBOX_DIR/Application\ Support
 APPLICATION_SUPPORT_DIR=/Users/$USERNAME/Library/Application\ Support
 
