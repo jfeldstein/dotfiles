@@ -17,7 +17,7 @@ rvm install 2.4.1
 gem install homesick
 
 # Clone dotfiles (overwrite all except .ssh - that should be removed from dotfiles at some point)
-homesick clone https://github.com/bdefore/dotfiles.git
+homesick clone https://github.com/jfeldstein/dotfiles.git
 homesick symlink dotfiles
 
 # Update
