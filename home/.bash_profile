@@ -1,3 +1,8 @@
+NODEVER=7.4.0
+
+
+
+
 # [[ -r ~/.profile ]] && source ~/.profile
 # [[ -r ~/.bashrc ]] && source ~/.bashrc
 # [[ -r ~/.corporate_profiles/learnist ]] && source ~/.corporate_profiles/learnist
@@ -27,21 +32,30 @@ alias gsd='git svn dcommit'
 alias undo='git reset HEAD~1'
 alias d='git diff'
 alias git='hub'
+alias g="hub"
+alias git-prune-origin="git checkout master && git fetch --prune && git branch -r --merged | grep -v master | sed 's/origin\///' | xargs -n 1 git push --delete origin"
+alias git-prune-local="git checkout master && git branch --merged | grep -v '\*' | grep -v master | grep -v dev | xargs -n 1 git branch -d"
+alias undo="git reset --soft 'HEAD^'"
+
+# Python virtualenv alias
+alias activate="source ./env/bin/activate"
+# Suppress .pyc files
+PYTHONDONTWRITEBYTECODE=1
+
+# Postgres
+alias pg_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
+alias pg_restart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log restart"
+alias pg_stop="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop"
+
+# Chrome / Optimizely
+alias scary-chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --user-data-dir=/tmp/tempchrome --allow-running-insecure-content &"
+
+
 
 # http://fredkschott.com/post/2014/02/git-log-is-so-2005/
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit"
 
 git config --global alias.recent "for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %(authorname) %(refname:short)'"
-
-# Node Aliases
-alias npd='npm install -d'
-
-# Easier navigation: .., ..., ...., ....., ~ and -
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-alias -- -="cd -"
 
 # From git source. Adds completions for branches, among other treats
 source ~/.gittools/git-completion.bash
@@ -110,7 +124,15 @@ PATH=$PATH:/usr/local/mysql/bin
 PATH=$PATH:/usr/local/git/bin
 PATH=$PATH:/Applications/mongodb/bin
 PATH=$PATH:/Developer/usr/bin
-PATH=$PATH:/Users/d4/.nvm/versions/node/v6.2.1/bin # to enable sublimelinter finding eslint
+PATH=$PATH:/Users/$(whoami)/.nvm/versions/node/v$NODEVER/bin # to enable sublimelinter finding eslint
+
+# Go
+export GOPATH=$HOME/Go
+export GOROOT=/usr/local/opt/go/libexec
+export FIRST_GO_PATH=$GOPATH
+PATH=$PATH:$GOPATH/bin
+PATH=$PATH:$GOROOT/bin
+
 
 # http://blog.macromates.com/2008/working-with-history-in-bash/
 export HISTCONTROL=ignoredups:erasedups
@@ -123,16 +145,7 @@ shopt -s histappend
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 alias prof="subl ~/.bash_profile"
-alias bitch=sudo
 # alias tar="tar -cvzf"
-alias nave="sh ~/Documents/bash/nave.sh"
-alias alert="open ~/Desktop/BabyElephantWalk.flv"
-alias brack="/Applications/Brackets.app/Contents/MacOS/Brackets"
-alias ur="cd ~/code/universal-redux"
-
-# flash logging
-alias fl="tail -f ~/Library/Preferences/Macromedia/Flash\ Player/Logs/flashlog.txt"
-alias flnonet="tail -f ~/Library/Preferences/Macromedia/Flash\ Player/Logs/flashlog.txt | grep -v [NET]"
 
 # Pretty display recursively
 alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
@@ -184,16 +197,8 @@ done
 
 source ~/.nvm/nvm.sh
 nvm use > /dev/null 2>&1 # expects ~/.nvmrc to define version
-nvm alias default 6.2.1 # TODO: have this derived from nvmrc. is needed for sublimelinter to function
+nvm alias default $NODEVER # TODO: have this derived from nvmrc. is needed for sublimelinter to function
 
 # http://vijayskotecha.blogspot.com/2015/08/2-methods-to-speed-up-you-nodejs-npm.html
 alias npmi="time npm i --cache-min=1000000"
 # alias npmi="if test npm i --cache-min=1000000; then terminal-notifier -title 'npm' -message 'Install completed successfully' ; else terminal-notifier -title 'npm' -message 'Install failed!' ; fi"
-alias nrd="npm run dev"
-alias rmn="rm -rf node_modules"
-alias rei="rm -rf ./node-modules && npmi"
-alias hbo="cd ~/code/reaktor/hbo"
-alias mvndoit="mvn install -PautoInstallPackage"
-
-# added by Anaconda 2.1.0 installer
-export PATH="/Users/d4/anaconda/bin:$PATH"
