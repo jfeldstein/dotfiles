@@ -19,6 +19,8 @@ brew cask install slack
 brew cask install sublime-text
 #brew cask install atom
 #brew cask install brackets
+brew cask install querious
+brew cask install sketch
 
 # less important
 brew cask install insync
@@ -27,6 +29,7 @@ brew cask install skype
 brew cask install cloudapp
 brew cask install docker
 brew cask install google-photos-backup-and-sync
+brew cask install flux
 #brew cask install charles
 #brew cask install screenhero
 #brew cask install vnc-viewer
