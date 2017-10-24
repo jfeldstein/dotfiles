@@ -9,6 +9,7 @@ brew install redis
 brew install imagemagick
 brew install wget
 brew install heroku
+brew install cairo
 brew install terminal-notifier
 brew install diff-so-fancy
 brew install --HEAD hub
