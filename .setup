@@ -4,6 +4,9 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 # install common dev tools
 ./.brew
 
+# installs insync, which is used to download Application Support files from google drive
+./.insync
+
 # install rvm: (it may tell you that git requires installing command line tools, accept that)
 \curl -sSL https://get.rvm.io | bash
 
