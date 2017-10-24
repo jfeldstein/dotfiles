@@ -10,16 +10,16 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 sudo pmset -a standbydelay 86400
 
 # Disable the sudden motion sensor as it’s not useful for SSDs
-sudo pmset -a sms 0
+#sudo pmset -a sms 0
 
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
 
 # Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName "foo"
-sudo scutil --set HostName "d4"
-sudo scutil --set LocalHostName "d4"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "d4"
+sudo scutil --set ComputerName "FreshPC"
+sudo scutil --set HostName "jfeldstein"
+sudo scutil --set LocalHostName "jfeldstein"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "jfeldstein"
 
 # Menu bar: hide the useless Time Machine and Volume icons
 defaults write com.apple.systemuiserver menuExtras -array "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" "/System/Library/CoreServices/Menu Extras/AirPort.menu" "/System/Library/CoreServices/Menu Extras/Battery.menu" "/System/Library/CoreServices/Menu Extras/Clock.menu"
@@ -50,7 +50,7 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 # set caps lock to control key behavior
 # does NOT work as is, you must find product and vendor id's and swap out those here
 # also requires user to log out and log back in
-defaults -currentHost write -g com.apple.keyboard.modifiermapping.1452-610-0 -array-add '<dict><key>HIDKeyboardModifierMappingDst</key><integer>2</integer><key>HIDKeyboardModifierMappingSrc</key><integer>0</integer></dict>'
+#defaults -currentHost write -g com.apple.keyboard.modifiermapping.1452-610-0 -array-add '<dict><key>HIDKeyboardModifierMappingDst</key><integer>2</integer><key>HIDKeyboardModifierMappingSrc</key><integer>0</integer></dict>'
 
 # Expand save panel by default
 defaults write -g NSNavPanelExpandedStateForSaveMode -bool true
@@ -63,10 +63,11 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 	Privileges -bool true
 
 # Set a blazingly fast keyboard repeat rate
-defaults write NSGlobalDomain KeyRepeat -int 0
+defaults write NSGlobalDomain KeyRepeat -int 0.02
+defaults write NSGlobalDomain InitialKeyRepeat -int 12
 
-# Turn off keyboard illumination when computer is not used for 5 minutes
-defaults write com.apple.BezelServices kDimTime -int 300
+# Turn off keyboard illumination when computer is not used for 1 minute
+defaults write com.apple.BezelServices kDimTime -int 60
 
 # Set Desktop as the default location for new Finder windows
 # For other paths, use `PfLo` and `file:///full/path/here/`
@@ -96,13 +97,13 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
 # Disable the warning before emptying the Trash
-defaults write com.apple.finder WarnOnEmptyTrash -bool false
+#defaults write com.apple.finder WarnOnEmptyTrash -bool false
 
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
 
 # Set the icon size of Dock items to 36 pixels
-defaults write com.apple.dock tilesize -int 36
+defaults write com.apple.dock tilesize -int 64
 
 # Set Safari’s home page to `about:blank` for faster loading
 defaults write com.apple.Safari HomePage -string "about:blank"
