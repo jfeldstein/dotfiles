@@ -1,4 +1,5 @@
 USERNAME=jordan
+HOME_DIR=/Users/$USERNAME
 DROPBOX_DIR=/Users/$USERNAME/Google\ Drive
 SYNCED_APPLICATION_SUPPORT_DIR=$DROPBOX_DIR/Application\ Support
 APPLICATION_SUPPORT_DIR=/Users/$USERNAME/Library/Application\ Support
@@ -18,3 +19,26 @@ for path in "$SYNCED_APPLICATION_SUPPORT_DIR"/*; do
 done
 
 echo Application Support directories symlinked successfully.
+
+echo Symlinking ~/Downloads ~/Desktop ~/Documents
+if [ -e "$HOME_DIR/Downloads" ]; then
+  echo Stashing local Downloads
+  mv "$HOME_DIR/Downloads" "$HOME_DIR/Downloads_deleteme"
+fi
+echo Symlinking Downloads
+ln -s "$DROPBOX_DIR/Downloads" "$HOME_DIR/Downloads"
+
+if [ -e "$HOME_DIR/Desktop" ]; then
+  echo Stashing local Desktop
+  mv "$HOME_DIR/Desktop" "$HOME_DIR/Desktop_deleteme"
+fi
+echo Symlinking Desktop
+ln -s "$DROPBOX_DIR/Desktop" "$HOME_DIR/Desktop"
+
+if [ -e "$HOME_DIR/Documents" ]; then
+  echo Stashing local Documents
+  mv "$HOME_DIR/Documents" "$HOME_DIR/Documents_deleteme"
+fi
+echo Symlinking Documents
+ln -s "$DROPBOX_DIR/Synced\ Documents" "$HOME_DIR/Documents"
+
