@@ -57,6 +57,9 @@ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Crese
 
 git config --global alias.recent "for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %(authorname) %(refname:short)'"
 
+git config --global alias.cam "commit . -m "
+git config --global alias.cob "checkout -b "
+
 # From git source. Adds completions for branches, among other treats
 source ~/.gittools/git-completion.bash
 source ~/.gittools/git-flow-completion.bash
