@@ -2,7 +2,7 @@ brew install coreutils
 brew install git
 brew install git-extras
 brew install hub
-brew install postgres
+brew install postgres@9.6
 brew install mysql
 brew install nginx
 brew install redis
