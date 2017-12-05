@@ -128,6 +128,7 @@ PATH=$PATH:/usr/local/git/bin
 PATH=$PATH:/Applications/mongodb/bin
 PATH=$PATH:/Developer/usr/bin
 PATH=$PATH:/Users/$(whoami)/.nvm/versions/node/v$NODEVER/bin # to enable sublimelinter finding eslint
+PATH="/usr/local/opt/postgresql@9.6/bin:$PATH" # Find PG 9.6
 
 # Go
 export GOPATH=$HOME/Go
