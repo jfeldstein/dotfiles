@@ -33,9 +33,13 @@ alias undo='git reset HEAD~1'
 alias d='git diff'
 alias git='hub'
 alias g="hub"
+alias fr='foreman run'
 alias git-prune-origin="git checkout master && git fetch --prune && git branch -r --merged | grep -v master | sed 's/origin\///' | xargs -n 1 git push --delete origin"
 alias git-prune-local="git checkout master && git branch --merged | grep -v '\*' | grep -v master | grep -v dev | xargs -n 1 git branch -d"
 alias undo="git reset --soft 'HEAD^'"
+
+# https://gist.github.com/jacobvosmaer/3187346#gistcomment-387174
+alias fix="subl `git diff --name-only | uniq`"
 
 # Python virtualenv alias
 alias activate="source ./env/bin/activate"
@@ -56,6 +60,8 @@ alias scary-chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chro
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit"
 
 git config --global alias.recent "for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %(authorname) %(refname:short)'"
+git config --global alias.cam "commit . -m "
+git config --global alias.cob "checkout -b "
 
 git config --global alias.cam "commit . -m "
 git config --global alias.cob "checkout -b "
@@ -206,3 +212,5 @@ nvm alias default $NODEVER # TODO: have this derived from nvmrc. is needed for s
 # http://vijayskotecha.blogspot.com/2015/08/2-methods-to-speed-up-you-nodejs-npm.html
 alias npmi="time npm i --cache-min=1000000"
 # alias npmi="if test npm i --cache-min=1000000; then terminal-notifier -title 'npm' -message 'Install completed successfully' ; else terminal-notifier -title 'npm' -message 'Install failed!' ; fi"
+export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
+
