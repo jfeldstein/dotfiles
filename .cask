@@ -2,36 +2,26 @@
 
 # essentials
 brew cask install google-chrome
-# brew cask install dropbox # necessary to download manually beforehand anyway in order to start dotfiles scripts
 brew cask install 1password
-#brew cask install iterm2
 brew cask install the-unarchiver
 brew cask install spectacle
 
 # messengers
-#brew cask install hipchat
 brew cask install slack
-#brew cask install discord
-#brew cask install riot
-# brew cask install colloquy
 
 # editors
 brew cask install sublime-text
-#brew cask install atom
-#brew cask install brackets
 brew cask install querious
 brew cask install sketch
 brew cask install colorpicker-skalacolor
 
 # less important
-brew cask install insync
 brew cask install firefox
 brew cask install skype
 brew cask install cloudapp
 brew cask install docker
 brew cask install google-photos-backup-and-sync
-brew cask install flux
-#brew cask install charles
+brew cask install charles
 #brew cask install screenhero
 #brew cask install vnc-viewer
 # brew cask install chromium
@@ -43,7 +33,7 @@ brew cask install flux
 # home entertainment
 brew cask install transmission
 brew cask install vlc
-brew cask install steam
+#brew cask install steam
 
 # android dev
 # brew cask install java
