@@ -35,9 +35,6 @@ nvm use 8.0.0
 # setup osx preferences:
 ./.osx
 
-# Symlink Application Support directories from Dropbox
-./.symlink_application_support
-
 # install brew cask:
 brew tap phinze/cask
 brew install brew-cask
