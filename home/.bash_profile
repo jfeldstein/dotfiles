@@ -1,13 +1,4 @@
-NODEVER=7.4.0
-
-
-
-
-# [[ -r ~/.profile ]] && source ~/.profile
-# [[ -r ~/.bashrc ]] && source ~/.bashrc
-# [[ -r ~/.corporate_profiles/learnist ]] && source ~/.corporate_profiles/learnist
-# [[ -r ~/.corporate_profiles/academiaedu ]] && source ~/.corporate_profiles/academiaedu
-[[ -r ~/.corporate_profiles/ga ]] && source ~/.corporate_profiles/ga
+NODEVER=8.0.0
 
 # Terminal coloring
 export CLICOLOR=1
@@ -51,18 +42,15 @@ alias pg_start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/ser
 alias pg_restart="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log restart"
 alias pg_stop="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop"
 
+# Fast edit of this file
+alias prof="subl ~/.bash_profile"
+
 # Chrome / Optimizely
 alias scary-chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --user-data-dir=/tmp/tempchrome --allow-running-insecure-content &"
 
-
-
 # http://fredkschott.com/post/2014/02/git-log-is-so-2005/
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit"
-
 git config --global alias.recent "for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %(authorname) %(refname:short)'"
-git config --global alias.cam "commit . -m "
-git config --global alias.cob "checkout -b "
-
 git config --global alias.cam "commit . -m "
 git config --global alias.cob "checkout -b "
 
@@ -114,12 +102,8 @@ unset bash_prompt
 # PS1='\u@\h \W$(__git_ps1 " (%s)")\$ '
 PS1=$PS1'$(__git_ps1 " (%s)") \n→ '
 
-# PS1 suggestions from https://wiki.archlinux.org/index.php/Color_Bash_Prompt:
-#PS1='\e[1;33;47m\u \e[1;32;47mon \h \e[1;35;47m\d \@\e[0;0m\n\e[1;34m[dir.= \w] \# > \e[0;0m'
-#PS1='\e[1;31;47m\u \e[1;32;47mon \h \e[1;35;47m\d \@\e[0;0m\n\e[1;31m[dir.= \w] \# > \e[0;0m'
 export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
 export ANDROID_NDK_HOME=/usr/local/opt/android-ndk
-# export ANDROID_HOME=/Applications/Android\ Studio.app/sdk
 export ANDROID_HOME=$ANDROID_SDK_ROOT
 
 PATH=$PATH:/usr/local/share/npm/bin
@@ -135,6 +119,7 @@ PATH=$PATH:/Applications/mongodb/bin
 PATH=$PATH:/Developer/usr/bin
 PATH=$PATH:/Users/$(whoami)/.nvm/versions/node/v$NODEVER/bin # to enable sublimelinter finding eslint
 PATH="/usr/local/opt/postgresql@9.6/bin:$PATH" # Find PG 9.6
+export PATH
 
 # Go
 export GOPATH=$HOME/Go
@@ -149,61 +134,11 @@ export HISTCONTROL=ignoredups:erasedups
 export HISTSIZE=1000000
 shopt -s histappend
 
-# After each command, append to the history file and reread it. Preserves history across all terminal windows
-# export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
-
+# Install directly to /Applications
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-
-alias prof="subl ~/.bash_profile"
-# alias tar="tar -cvzf"
-
-# Pretty display recursively
-alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
-
-# Required for Alchemy dev
-#source ~/Sync/Code/SDK/alchemy/alchemy-setup
-
-export NODE_ENV=development
-# export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"
-
-# an android studio 1.0 / os x 10.10 workaround
-# export STUDIO_JDK="/Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk"
-
-export PATH
-
-# {{{
-# Node Completion - Auto-generated, do not touch.
-# shopt -s progcomp
-# for f in $(command ls ~/.node-completion); do
-#   f="$HOME/.node-completion/$f"
-#   test -f "$f" && . "$f"
-# done
-# }}}
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
 
 # Autocorrect on the command line
 # shopt -s cdspell
-
-# Enable some Bash 4 features when possible:
-# * `autocd`, e.g. `**/qux` will enter `./foo/bar/baz/qux`
-# * Recursive globbing, e.g. `echo **/*.txt`
-for option in autocd globstar; do
-    shopt -s "$option" 2> /dev/null
-done
-
-# Import autujump indexing
-[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
-
-# Switch to fish terminal. Do this rather than chsh so as to migrate exports
-# Things that don't work with fish:
-# - any aliases in .bash_profile (some have been migrated to .config/fish/config.fish)
-# - rvm?
-# - ssh?!
-# fish
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 source ~/.nvm/nvm.sh
 nvm use > /dev/null 2>&1 # expects ~/.nvmrc to define version
@@ -212,5 +147,12 @@ nvm alias default $NODEVER # TODO: have this derived from nvmrc. is needed for s
 # http://vijayskotecha.blogspot.com/2015/08/2-methods-to-speed-up-you-nodejs-npm.html
 alias npmi="time npm i --cache-min=1000000"
 # alias npmi="if test npm i --cache-min=1000000; then terminal-notifier -title 'npm' -message 'Install completed successfully' ; else terminal-notifier -title 'npm' -message 'Install failed!' ; fi"
-export PATH="/usr/local/opt/postgresql@9.6/bin:$PATH"
 
+export NODE_ENV=development
+export PATH="/usr/local/heroku/bin:$PATH"
+
+# Load other profiles (sometimes dev tools add to these)
+[[ -r ~/.profile ]] && source ~/.profile
+[[ -r ~/.bashrc ]] && source ~/.bashrc
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
