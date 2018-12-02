@@ -3,7 +3,7 @@ brew install git
 brew install git-extras
 brew install hub
 brew install wget
-brew install heroku
+brew install heroku/brew/heroku
 brew install docker
 brew install cairo
 brew install terminal-notifier
