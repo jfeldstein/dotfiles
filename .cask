@@ -13,6 +13,7 @@ brew cask install slack
 brew cask install sublime-text
 brew cask install querious
 brew cask install sketch
+brew cask install abstract
 brew cask install colorpicker-skalacolor
 
 # less important
