@@ -4,6 +4,7 @@ brew install git-extras
 brew install hub
 brew install wget
 brew install heroku
+brew install docker
 brew install cairo
 brew install terminal-notifier
 brew install diff-so-fancy
