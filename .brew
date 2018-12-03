@@ -2,6 +2,7 @@ brew install coreutils
 brew install git
 brew install git-extras
 brew install go
+brew install qgis3
 brew install hub
 brew install wget
 brew install heroku/brew/heroku
