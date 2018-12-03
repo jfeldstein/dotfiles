@@ -30,7 +30,11 @@ nvm install 8.0.0
 nvm use 8.0.0
 
 # install common node tools
-./.npm
+npm install -g \
+  nyc \
+  npm-check-updates \
+  trash-cli \
+  eslint
 
 # setup osx preferences:
 ./.osx

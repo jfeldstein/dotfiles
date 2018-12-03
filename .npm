@@ -1,5 +1,0 @@
-npm install -g \
-  nyc \
-  npm-check-updates \
-  trash-cli \
-  eslint
