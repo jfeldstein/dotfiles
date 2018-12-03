@@ -9,7 +9,6 @@ brew install docker
 brew install cairo
 brew install terminal-notifier
 brew install diff-so-fancy
-brew install --HEAD hub
 
 # install brew cask:
 brew tap phinze/cask
