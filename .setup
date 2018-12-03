@@ -29,19 +29,11 @@ source ~/.bashrc
 nvm install 8.0.0
 nvm use 8.0.0
 
-# install common node tools
-npm install -g \
-  nyc \
-  npm-check-updates \
-  trash-cli \
-  eslint
-
 # setup osx preferences:
 ./.osx
 
 # install brew cask:
 brew tap phinze/cask
-brew install brew-cask
 brew tap caskroom/versions
 
 # Use cask to install the apps you use (and take a coffee break):

@@ -1,8 +1,0 @@
-.DS_Store
-home/.gradle/caches
-home/.gradle/daemon
-home/.gradle/native
-home/.gradle/wrapper
-home/.atom/.apm
-home/.atom/packages
-home/.atom/blob-store
