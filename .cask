@@ -1,53 +1,53 @@
 #!/bin/bash
 
 # essentials
-brew cask install google-chrome
-brew cask install 1password
-brew cask install the-unarchiver
-brew cask install spectacle
+brew cask install --appdir="/Applications" google-chrome
+brew cask install --appdir="/Applications" 1password
+brew cask install --appdir="/Applications" the-unarchiver
+brew cask install --appdir="/Applications" spectacle
 
 # messengers
-brew cask install slack
+brew cask install --appdir="/Applications" slack
 
 # editors
-brew cask install sublime-text
-brew cask install querious
-brew cask install sketch
-brew cask install abstract
-brew cask install colorpicker-skalacolor
+brew cask install --appdir="/Applications" sublime-text
+brew cask install --appdir="/Applications" querious
+brew cask install --appdir="/Applications" sketch
+brew cask install --appdir="/Applications" abstract
+brew cask install --appdir="/Applications" colorpicker-skalacolor
 
 # less important
-brew cask install firefox
-brew cask install skype
-brew cask install cloudapp
-brew cask install docker
-brew cask install google-photos-backup-and-sync
-brew cask install charles
-#brew cask install screenhero
-#brew cask install vnc-viewer
-# brew cask install chromium
-# brew cask install vmware-fusion
-# brew cask install adium
-# brew cask install adobe-air
-# brew cask install alfred
+brew cask install --appdir="/Applications" firefox
+brew cask install --appdir="/Applications" skype
+brew cask install --appdir="/Applications" cloudapp
+brew cask install --appdir="/Applications" docker
+brew cask install --appdir="/Applications" google-photos-backup-and-sync
+brew cask install --appdir="/Applications" charles
+#brew cask install --appdir="/Applications" screenhero
+#brew cask install --appdir="/Applications" vnc-viewer
+# brew cask install --appdir="/Applications" chromium
+# brew cask install --appdir="/Applications" vmware-fusion
+# brew cask install --appdir="/Applications" adium
+# brew cask install --appdir="/Applications" adobe-air
+# brew cask install --appdir="/Applications" alfred
 
 # home entertainment
-brew cask install transmission
-brew cask install vlc
-#brew cask install steam
+brew cask install --appdir="/Applications" transmission
+brew cask install --appdir="/Applications" vlc
+#brew cask install --appdir="/Applications" steam
 
 # android dev
-# brew cask install java
-# brew cask install android-studio
-# brew cask install genymotion
+# brew cask install --appdir="/Applications" java
+# brew cask install --appdir="/Applications" android-studio
+# brew cask install --appdir="/Applications" genymotion
 
 # rare use but nice to have
-#brew cask install daisydisk
-#brew cask install superduper
-#brew cask install audacity
-# brew cask install unity-web-player
+#brew cask install --appdir="/Applications" daisydisk
+#brew cask install --appdir="/Applications" superduper
+#brew cask install --appdir="/Applications" audacity
+# brew cask install --appdir="/Applications" unity-web-player
 
 #brew tap caskroom/fonts
-#brew cask install font-iosevka
+#brew cask install --appdir="/Applications" font-iosevka
 
 brew cask cleanup
