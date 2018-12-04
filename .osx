@@ -168,6 +168,9 @@ defaults write org.m0k.transmission DownloadAsk -bool false
 # Never bounce a dock icon
 defaults write com.apple.dock no-bouncing -bool TRUE
 
+# Disable fwd/back with 2-finger swipe in Chrome
+defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool FALSE
+
 # Speed up / disable animations https://apple.stackexchange.com/a/253800
 defaults write com.apple.dock launchanim -bool false
 defaults write com.apple.dock expose-animation-duration -float 0.1
