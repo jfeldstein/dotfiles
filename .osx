@@ -181,6 +181,9 @@ defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
 # don't move spaces around http://www.defaults-write.com/disable-automatically-rearrange-spaces-based-on-recent-use/
 defaults write com.apple.dock mru-spaces -bool false
 
+# Save screenshots to downloads (so they're not pushed to idrive)
+defaults write com.apple.screencapture location ~/Downloads
+
 killall Dock
 
 killall Finder
