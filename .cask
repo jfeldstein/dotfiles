@@ -35,7 +35,7 @@ brew cask install --appdir="/Applications" charles
 # home entertainment
 brew cask install --appdir="/Applications" transmission
 brew cask install --appdir="/Applications" vlc
-#brew cask install --appdir="/Applications" steam
+brew cask install --appdir="/Applications" steam
 
 # android dev
 # brew cask install --appdir="/Applications" java
