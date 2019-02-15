@@ -1,7 +1,6 @@
 brew install coreutils
 brew install git
 brew install git-extras
-brew install qgis3
 brew install hub
 brew install wget
 brew install heroku/brew/heroku
@@ -16,5 +15,8 @@ brew install python3
 brew tap phinze/cask
 brew install brew-cask
 brew tap caskroom/versions
+
+brew tap osgeo/osgeo4mac
+brew install osgeo/osgeo4mac/qgis
 
 brew cleanup
