@@ -120,6 +120,11 @@ PATH=$PATH:/Developer/usr/bin
 PATH=$PATH:/Users/$(whoami)/.nvm/versions/node/v$NODEVER/bin # to enable sublimelinter finding eslint
 PATH="/usr/local/opt/postgresql@9.6/bin:$PATH" # Find PG 9.6
 PATH="/usr/local/opt/python/libexec/bin:$PATH" # brew install python3
+
+# QGIS
+export PATH="/usr/local/sbin:$PATH"
+export PYTHONPATH=/usr/local/opt/lib/python3.7/site-packages:/usr/local/opt/osgeo-qgis/lib/python3.7/site-packages:/usr/local/opt/osgeo-qgis/QGIS.app/Contents/Resources/python:/usr/local/opt/osgeo-gdal-python/lib/python3.7/site-packages:$PYTHONPATH
+
 export PATH
 
 # Go
