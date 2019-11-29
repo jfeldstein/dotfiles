@@ -184,6 +184,12 @@ defaults write com.apple.dock mru-spaces -bool false
 # Save screenshots to downloads (so they're not pushed to idrive)
 defaults write com.apple.screencapture location ~/Downloads
 
+# Enable tap to click
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+
+# Show battery % in menu bar
+defaults write com.apple.menuextra.battery ShowPercent YES
+
 killall Dock
 
 killall Finder
