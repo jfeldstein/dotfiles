@@ -190,6 +190,15 @@ defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
 # Show battery % in menu bar
 defaults write com.apple.menuextra.battery ShowPercent YES
 
+# General: enable scroll gesture with the Ctrl (^) modifier key to zoom
+sudo defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
+
+# General: automatically illuminate built-in MacBook keyboard in low light
+defaults write com.apple.BezelServices kDim -bool <%- osx.general_illuminate %>
+# Turn off keyboard illumination when computer is not used for 5 minutes
+defaults write com.apple.BezelServices kDimTime -int 300
+
+
 # Menu Extras
 defaults write com.apple.systemuiserver menuExtras -array \
 "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
