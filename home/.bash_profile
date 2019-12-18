@@ -161,4 +161,5 @@ export PATH="/usr/local/heroku/bin:$PATH"
 [[ -r ~/.profile ]] && source ~/.profile
 [[ -r ~/.bashrc ]] && source ~/.bashrc
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+export PATH="$PATH:$HOME/.rvm/bin"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
