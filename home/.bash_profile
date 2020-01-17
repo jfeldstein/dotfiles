@@ -1,5 +1,3 @@
-NODEVER=8.0.0
-
 # Terminal coloring
 export CLICOLOR=1
 export LSCOLORS=gxfxcxdxbxegedabagacad
@@ -117,7 +115,7 @@ PATH=$PATH:/usr/local/mysql/bin
 PATH=$PATH:/usr/local/git/bin
 PATH=$PATH:/Applications/mongodb/bin
 PATH=$PATH:/Developer/usr/bin
-PATH=$PATH:/Users/$(whoami)/.nvm/versions/node/v$NODEVER/bin # to enable sublimelinter finding eslint
+#PATH=$PATH:/Users/$(whoami)/.nvm/versions/node/v$NODEVER/bin # to enable sublimelinter finding eslint
 PATH="/usr/local/opt/postgresql@9.6/bin:$PATH" # Find PG 9.6
 PATH="/usr/local/opt/python/libexec/bin:$PATH" # brew install python3
 
@@ -148,7 +146,8 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 source ~/.nvm/nvm.sh
 nvm use > /dev/null 2>&1 # expects ~/.nvmrc to define version
-nvm alias default $NODEVER # TODO: have this derived from nvmrc. is needed for sublimelinter to function
+NODEVER=$(node --version)
+nvm alias default $NODEVER > /dev/null 2>&1
 
 # http://vijayskotecha.blogspot.com/2015/08/2-methods-to-speed-up-you-nodejs-npm.html
 alias npmi="time npm i --cache-min=1000000"
