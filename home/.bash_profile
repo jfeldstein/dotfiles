@@ -17,7 +17,7 @@ alias git-prune-local="git checkout master && git branch --merged | grep -v '\*'
 alias undo="git reset --soft 'HEAD^'"
 
 # https://gist.github.com/jacobvosmaer/3187346#gistcomment-387174
-alias fix="subl `git diff --name-only | uniq`"
+# alias fix="subl `git diff --name-only | uniq`"
 
 # Python virtualenv alias
 alias activate="source ./env/bin/activate"
