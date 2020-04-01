@@ -148,7 +148,7 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 # Disable Spotlight indexing for any volume that gets mounted and has not yet
 # been indexed before.
 # Use `sudo mdutil -i off "/Volumes/foo"` to stop indexing any volume.
-sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
+# sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes" # Does not work on new macs
 
 # Don’t display the annoying prompt when quitting iTerm
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
@@ -197,7 +197,7 @@ defaults write com.apple.menuextra.battery ShowPercent YES
 sudo defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
 
 # General: automatically illuminate built-in MacBook keyboard in low light
-defaults write com.apple.BezelServices kDim -bool <%- osx.general_illuminate %>
+# defaults write com.apple.BezelServices kDim -bool <%- osx.general_illuminate %>  # Does not work on new macs
 # Turn off keyboard illumination when computer is not used for 5 minutes
 defaults write com.apple.BezelServices kDimTime -int 300
 
