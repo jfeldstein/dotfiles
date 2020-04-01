@@ -13,10 +13,9 @@ brew install python3
 
 # install brew cask:
 brew tap phinze/cask
-brew install brew-cask
-brew tap caskroom/versions
+brew tap homebrew/cask-versions
 
-brew tap osgeo/osgeo4mac
-brew install osgeo/osgeo4mac/qgis
+#brew tap osgeo/osgeo4mac
+#brew install osgeo/osgeo4mac/qgis
 
 brew cleanup
