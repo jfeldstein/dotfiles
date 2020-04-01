@@ -10,8 +10,8 @@
 # source the rvm
 source ~/.rvm/scripts/rvm
 
-# install latest ruby
-rvm install 2.4.1
+# install ruby
+rvm install 2.5
 
 # install homesick and get your dotfiles:
 gem install homesick
