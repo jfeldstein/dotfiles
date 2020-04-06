@@ -15,6 +15,10 @@ sudo pmset -a standbydelay 86400
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
 
+# Use pop sound effect
+defaults write com.apple.systemsound com.apple.sound.beep.sound /System/Library/Sounds/Pop.aiff
+
+
 # Set computer name (as done via System Preferences → Sharing)
 sudo scutil --set ComputerName "FreshPC"
 sudo scutil --set HostName "jfeldstein"
