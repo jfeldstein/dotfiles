@@ -18,6 +18,8 @@ sudo nvram SystemAudioVolume=" "
 # Use pop sound effect
 defaults write com.apple.systemsound com.apple.sound.beep.sound /System/Library/Sounds/Pop.aiff
 
+# Set alert volume to 50%
+osascript SoundEffectVolume.scpt
 
 # Set computer name (as done via System Preferences → Sharing)
 sudo scutil --set ComputerName "FreshPC"
