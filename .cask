@@ -31,7 +31,7 @@ brew cask install --appdir="/Applications" charles
 # brew cask install --appdir="/Applications" vmware-fusion
 # brew cask install --appdir="/Applications" adium
 # brew cask install --appdir="/Applications" adobe-air
-# brew cask install --appdir="/Applications" alfred
+brew cask install --appdir="/Applications" alfred
 
 # home entertainment
 brew cask install --appdir="/Applications" transmission
