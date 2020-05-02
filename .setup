@@ -39,8 +39,8 @@ brew tap caskroom/versions
 # Use cask to install the apps you use (and take a coffee break):
 ./.cask
 
-# Add Sublime Text convenience script
-ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl
+# Setup Sublime
+./.sublime
 
 # log out, back in again
 # osascript -e 'tell app "System Events" to log out'

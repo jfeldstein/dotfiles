@@ -1,0 +1,8 @@
+# Add Sublime Text convenience script
+ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl
+
+# Install Package Control
+wget -O ~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages/Package\ Control.sublime-package https://packagecontrol.io/Package%20Control.sublime-package
+
+# Install settings
+cp ./sublime_user/* ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/
