@@ -10,7 +10,7 @@ tell application "System Preferences"
 
             tell window "Bluetooth"
 
-                tell button 6
+                tell button 3
 
                     if name is "Turn Bluetooth On" then click
 

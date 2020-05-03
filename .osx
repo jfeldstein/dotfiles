@@ -21,6 +21,10 @@ defaults write com.apple.systemsound com.apple.sound.beep.sound /System/Library/
 # Set alert volume to 50%
 osascript SoundEffectVolume.scpt
 
+# Enable Bluetooth on wake
+cp ./plists/EnableBluetooth.plist ~/Library/LaunchAgents/
+launchctl load ~/Library/LaunchAgents/EnableBluetooth.plist
+
 # Set computer name (as done via System Preferences → Sharing)
 sudo scutil --set ComputerName "FreshPC"
 sudo scutil --set HostName "jfeldstein"
