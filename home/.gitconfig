@@ -15,23 +15,15 @@
 	st = "!echo \"# Working as `git config user.name` <`git config user.email`>\"; echo \"#\"; git status"
 	ci = !git commit
 	co = !git checkout
-	fuckit = !git reset --hard
-	deceive = git rebase
-	production-tag = !git tag -l 'production-*' | sort -n -k2 -t- | tail -1
-	staging-tag = !git tag -l 'staging-*' | sort -n -k2 -t- | tail -1
-	latest-tag = !git log --pretty=oneline -1 | sed 's/ .*//'
 	tree = log --graph --pretty=format:'%C(yellow)%h%Creset%C(blue)%d%Creset %C(white bold)%s%Creset %C(white dim)(by %an %ar)%Creset'
-	updater = submodule update --init --recursive
-	name = !/Users/d4/workspace/devops/git/name.rb
 	ls = log --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short
 	lsv = log --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short --numstat
-	oy = !git st
-	bfgs = !/Users/d4/workspace/devops/git/purge_big_files_from_git_history.rb
 	branches = for-each-ref --sort=-committerdate refs/heads/ --format='%(color:green)%(committerdate:relative)%(color:reset)\t %(color:bold yellow)%(refname:short)%(color:reset) %(contents:subject) - %(color:bold)%(authorname)%(color:reset)'
 	recent = for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %(authorname) %(refname:short)'
 	autocommit = !"git commit -m \"$(curl -s 'http://whatthecommit.com' | grep -A1 'id=\"content\"' | tail -n 1 | tr -d '<p>')\""
 	cam = "commit . -m "
 	cob = "checkout -b "
+	undo = !git reset --soft HEAD~1
 [credential]
 	helper = osxkeychain
 [rerere]
