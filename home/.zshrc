@@ -14,9 +14,9 @@ alias activate="source ./env/bin/activate"
 PYTHONDONTWRITEBYTECODE=1
 
 # Git friendlies
-source ~/.gittools/git-completion.bash
-source ~/.gittools/git-flow-completion.bash
-source ~/.gittools/git-prompt.bash
+. ~/.gittools/git-prompt.sh
+zstyle ':completion:*:*:git:*' script ~/.gittools/git-completion.zsh
+setopt PROMPT_SUBST ; PS1='[%n@%m %c$(__git_ps1 " (%s)")]\$ '
 
 # # QGIS
 # export PATH="/usr/local/sbin:$PATH"
