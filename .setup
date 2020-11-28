@@ -6,6 +6,7 @@
 
 # Install python via pyenv
 pyenv install 3.9.0
+pyenv global 3.9.0
 
 # install rvm: (it may tell you that git requires installing command line tools, accept that)
 \curl -sSL https://get.rvm.io | bash
