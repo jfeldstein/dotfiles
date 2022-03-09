@@ -21,6 +21,8 @@
 	branches = for-each-ref --sort=-committerdate refs/heads/ --format='%(color:green)%(committerdate:relative)%(color:reset)\t %(color:bold yellow)%(refname:short)%(color:reset) %(contents:subject) - %(color:bold)%(authorname)%(color:reset)'
 	recent = for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %(authorname) %(refname:short)'
 	undo = !git reset --soft HEAD~1
+	fixup = !git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup
+	
 [credential]
 	helper = osxkeychain
 [rerere]
@@ -34,6 +36,7 @@
 	show = diff-so-fancy | less --tabs=1,5 -RFX
 [rebase]
 	autostash = true
+	autosquash = true
 [push]
 	default = simple
 [branch]
