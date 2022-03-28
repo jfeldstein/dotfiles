@@ -41,3 +41,7 @@
 	default = simple
 [branch]
 	autosetupmerge = always
+[pull]
+	ff = only
+[fetch]
+	prune = true
