@@ -1,18 +1,17 @@
 brew install coreutils
 
 brew install git
+brew install gh
 brew install git-extras
+
 brew install git-secrets
 git secrets --register-aws --global
 
-brew install hub
-brew install wget
-brew install heroku/brew/heroku
-brew install docker
-brew install cairo
-brew install terminal-notifier
 brew install diff-so-fancy
-brew install terraform
+git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
+git config --global interactive.diffFilter "diff-so-fancy --patch"
+
+brew install wget
 brew install pyenv
 
 # install brew cask:
