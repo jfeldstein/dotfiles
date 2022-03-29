@@ -8,46 +8,18 @@ brew install --cask slack
 
 # editors
 brew install --cask visual-studio-code
-# brew install --cask iterm2
 brew install --cask querious
-# brew install --cask sketch
-# brew install --cask zeplin
-# brew install --cask abstract
 brew install --cask colorpicker-skalacolor
 
 # less important
+brew install --cask messenger
 brew install --cask google-chrome
-# brew install --cask firefox
-# brew install --cask skype
+brew install --cask firefox
 brew install --cask cloudapp
 brew install --cask docker
-# brew install --cask google-photos-backup-and-sync
-# brew install --cask charles
-# brew install --cask screenhero
-# brew install --cask vnc-viewer
-# brew install --cask chromium
-# brew install --cask vmware-fusion
-# brew install --cask adium
-# brew install --cask adobe-air
-# brew install --cask alfred
-
-# home entertainment
 brew install --cask transmission
-# brew install --cask vlc
-# brew install --cask steam
+brew install --cask zoom
+brew install --cask whatsapp
 
-# android dev
-# brew install --cask java
-# brew install --cask android-studio
-# brew install --cask genymotion
-
-# rare use but nice to have
-# brew install --cask daisydisk
-# brew install --cask superduper
-# brew install --cask audacity
-# brew install --cask unity-web-player
-
-#brew tap caskroom/fonts
-# brew install --cask font-iosevka
 
 brew cleanup
