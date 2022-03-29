@@ -1,18 +1,17 @@
-# Install dotfiles
-cp -r ./home/. ~/
-
 # install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 # install common dev tools
 ./.brew
 
-# install rvm: (it may tell you that git requires installing command line tools, accept that)
+# install rvm:
 \curl -sSL https://get.rvm.io | bash
 
 # install nvm
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
 
+# Install dotfiles
+cp -r ./home/. ~/
 source ~/.zshrc
 
 # Install python and node
@@ -21,6 +20,10 @@ pyenv global 3.9.0
 nvm install stable
 nvm alias default stable
 nvm use default
+
+# Init VS Code settings
+mv home/.vscode/settings.json ~/Library/Application\ Support/Code/User/
+for d in ~/.vscode/extensions/*; do ( cd "$d" && npm install); done
 
 # setup osx preferences:
 ./.osx

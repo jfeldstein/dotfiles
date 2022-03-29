@@ -1,0 +1,10 @@
+{
+    "search.location": "panel",
+    "colorize.colorized_variables": [
+        "CSS",
+        "SASS"
+    ],
+    "atomKeymap.promptV3Features": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.formatOnPaste": true
+}
