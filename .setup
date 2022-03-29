@@ -1,50 +1,29 @@
+# Install dotfiles
+cp -r ./home/. ~/
+
 # install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 # install common dev tools
 ./.brew
 
-# Install python via pyenv
-pyenv install 3.9.0
-pyenv global 3.9.0
-
 # install rvm: (it may tell you that git requires installing command line tools, accept that)
 \curl -sSL https://get.rvm.io | bash
 
-# source the rvm
-source ~/.rvm/scripts/rvm
-
-# install ruby
-rvm install 2.5
-
-# install homesick and get your dotfiles:
-gem install homesick
-
-# Clone dotfiles (overwrite all except .ssh - that should be removed from dotfiles at some point)
-homesick clone https://github.com/jfeldstein/dotfiles.git
-homesick symlink dotfiles
-
-# Update
-source ~/.bash_profile
-
-# install nvm and node
+# install nvm
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
-source ~/.bashrc
-nvm install 8.0.0
-nvm use 8.0.0
+
+source ~/.zshrc
+
+# Install python and node
+pyenv install 3.9.0
+pyenv global 3.9.0
+nvm install stable
+nvm alias default stable
+nvm use default
 
 # setup osx preferences:
 ./.osx
 
-# install brew cask:
-brew tap phinze/cask
-brew tap caskroom/versions
-
-# Use cask to install the apps you use (and take a coffee break):
-./.cask
-
-# Setup Sublime
-./.sublime
-
 # log out, back in again
-# osascript -e 'tell app "System Events" to log out'
+osascript -e 'tell app "System Events" to log out'

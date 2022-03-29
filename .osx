@@ -9,9 +9,6 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # Set standby delay to 24 hours (default is 1 hour)
 sudo pmset -a standbydelay 86400
 
-# Disable the sudden motion sensor as it’s not useful for SSDs
-#sudo pmset -a sms 0
-
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
 
@@ -20,10 +17,6 @@ defaults write com.apple.systemsound com.apple.sound.beep.sound /System/Library/
 
 # Set alert volume to 50%
 osascript SoundEffectVolume.scpt
-
-# Enable Bluetooth on wake
-cp ./plists/EnableBluetooth.plist ~/Library/LaunchAgents/
-launchctl load ~/Library/LaunchAgents/EnableBluetooth.plist
 
 # Set computer name (as done via System Preferences → Sharing)
 sudo scutil --set ComputerName "FreshPC"
@@ -51,16 +44,8 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 # Show the ~/Library folder
 chflags nohidden ~/Library
 
-# security and privacy: install from anywhere
-sudo spctl --master-disable
-
 # Disable the “Are you sure you want to open this application?” dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
-
-# set caps lock to control key behavior
-# does NOT work as is, you must find product and vendor id's and swap out those here
-# also requires user to log out and log back in
-#defaults -currentHost write -g com.apple.keyboard.modifiermapping.1452-610-0 -array-add '<dict><key>HIDKeyboardModifierMappingDst</key><integer>2</integer><key>HIDKeyboardModifierMappingSrc</key><integer>0</integer></dict>'
 
 # Expand save panel by default
 defaults write -g NSNavPanelExpandedStateForSaveMode -bool true
@@ -71,10 +56,6 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 	General -bool true \
 	OpenWith -bool true \
 	Privileges -bool true
-
-# Set a less-than blazingly fast keyboard repeat rate
-defaults write NSGlobalDomain KeyRepeat -int 2
-defaults write NSGlobalDomain InitialKeyRepeat -int 20
 
 # Turn off keyboard illumination when computer is not used for 1 minute
 defaults write com.apple.BezelServices kDimTime -int 60
@@ -107,12 +88,12 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
 # Disable the warning before emptying the Trash
-#defaults write com.apple.finder WarnOnEmptyTrash -bool false
+defaults write com.apple.finder WarnOnEmptyTrash -bool false
 
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
 
-# Set the icon size of Dock items to 36 pixels
+# Set the icon size of Dock items to 64 pixels
 defaults write com.apple.dock tilesize -int 64
 
 # Hide "Recent Applications" from appearing automatically in Dock
@@ -135,36 +116,14 @@ defaults write com.apple.Safari IncludeDevelopMenu -bool true
 defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
 
-# Avoid creating .DS_Store files on network volumes
-defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
-
-# Disable disk image verification
-defaults write com.apple.frameworks.diskimages skip-verify -bool true
-defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true
-defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
-
 # Disable smart quotes as they’re annoying when typing code
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
-
-# Save to disk (not to iCloud) by default
-defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
 # Use scroll gesture with the Ctrl (^) modifier key to zoom
 defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
 defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
 # Follow the keyboard focus while zoomed in
 defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
-
-# Disable auto-correct
-defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
-
-# Disable Spotlight indexing for any volume that gets mounted and has not yet
-# been indexed before.
-# Use `sudo mdutil -i off "/Volumes/foo"` to stop indexing any volume.
-# sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes" # Does not work on new macs
-
-# Don’t display the annoying prompt when quitting iTerm
-defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
 # Show the main window when launching Activity Monitor
 defaults write com.apple.ActivityMonitor OpenMainWindow -bool true
@@ -194,7 +153,7 @@ defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
 # don't move spaces around http://www.defaults-write.com/disable-automatically-rearrange-spaces-based-on-recent-use/
 defaults write com.apple.dock mru-spaces -bool false
 
-# Save screenshots to downloads (so they're not pushed to idrive)
+# Save screenshots to downloads
 defaults write com.apple.screencapture location ~/Downloads
 
 # Disable screenshot "Floating Thumbnail"
@@ -205,9 +164,6 @@ defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
 
 # Show battery % in menu bar
 defaults write com.apple.menuextra.battery ShowPercent YES
-
-# General: enable scroll gesture with the Ctrl (^) modifier key to zoom
-sudo defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
 
 # General: automatically illuminate built-in MacBook keyboard in low light
 # defaults write com.apple.BezelServices kDim -bool <%- osx.general_illuminate %>  # Does not work on new macs

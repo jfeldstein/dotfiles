@@ -1,9 +1,0 @@
-{
-	"ignored_packages":
-	[
-		"Markdown",
-		"Vintage"
-	],
-	"folder_exclude_patterns": ["node_modules"],
-	"file_exclude_patterns": ["*.lock"]
-}

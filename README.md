@@ -1,5 +1,6 @@
 Installation
 --------------
-```
-git clone https://github.com/bdefore/dotfiles && cd dotfiles && ./.setup
-```
+
+1. Download as a zip
+2. Unzip
+3. Run `./setup`

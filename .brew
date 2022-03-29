@@ -18,7 +18,25 @@ brew install pyenv
 brew tap homebrew/cask
 brew tap homebrew/cask-versions
 
-#brew tap osgeo/osgeo4mac
-#brew install osgeo/osgeo4mac/qgis
+# essentials
+brew install --cask 1password
+brew install --cask the-unarchiver
+brew install --cask spectacle
+brew install --cask slack
+
+# editors
+brew install --cask visual-studio-code
+brew install --cask querious
+brew install --cask colorpicker-skalacolor
+
+# less important
+brew install --cask messenger
+brew install --cask google-chrome
+brew install --cask firefox
+brew install --cask cloudapp
+brew install --cask docker
+brew install --cask transmission
+brew install --cask zoom
+brew install --cask whatsapp
 
 brew cleanup
