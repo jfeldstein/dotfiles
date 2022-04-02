@@ -12,7 +12,7 @@ git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
 git config --global interactive.diffFilter "diff-so-fancy --patch"
 
 brew install wget
-brew install pyenv
+brew install pyenv pyenv-virtualenv
 
 # install brew cask:
 brew tap homebrew/cask
