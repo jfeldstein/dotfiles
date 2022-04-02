@@ -4,7 +4,7 @@ bindkey "^[a" beginning-of-line
 bindkey "^[e" end-of-line
 
 # VSCode's "code" command
-export PATH="\$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export PATH="$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin"
 
 # Misc exports
 export NODE_ENV=development
@@ -37,6 +37,7 @@ fi
 
 # Version managers (last path changes)
 export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="/opt/homebrew/bin:$PATH" 
 export NVM_DIR="/Users/$(whoami)/.nvm"
 [ -s "$HOME/.rvm/scripts/rvm" ] && . "$HOME/.rvm/scripts/rvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
@@ -63,3 +64,4 @@ load-nvmrc() {
 }
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
+
