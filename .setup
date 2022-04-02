@@ -11,7 +11,7 @@
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
 
 # Install dotfiles
-cp -r ./home/. ~/
+rsync -av ./home/ ~/
 source ~/.zshrc
 
 # Install python and node
