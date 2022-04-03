@@ -12,14 +12,6 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | b
 
 # Install dotfiles
 rsync -av ./home/ ~/
-source ~/.zshrc
-
-# Install python and node
-pyenv install 3.9.0
-pyenv global 3.9.0
-nvm install stable
-nvm alias default stable
-nvm use default
 
 # Init VS Code settings
 mv home/.vscode/settings.json ~/Library/Application\ Support/Code/User/
@@ -30,3 +22,7 @@ for d in ~/.vscode/extensions/*; do ( cd "$d" && npm install); done
 
 # log out, back in again
 osascript -e 'tell app "System Events" to log out'
+
+echo ""
+echo ""
+echo "Please close terminal and reopen if you need it."
