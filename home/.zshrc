@@ -16,7 +16,7 @@ PYTHONDONTWRITEBYTECODE=1
 
 # Git friendlies
 . ~/.gittools/git-prompt.sh
-setopt PROMPT_SUBST ; PS1='[%n@%m %c$(__git_ps1 " (%s)")]\$ '
+setopt PROMPT_SUBST ; PS1='%c$(__git_ps1 " (%s)") \$ '
 autoload -Uz compinit && compinit
 
 # Go
