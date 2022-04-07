@@ -16,8 +16,8 @@ PYTHONDONTWRITEBYTECODE=1
 
 # Git friendlies
 . ~/.gittools/git-prompt.sh
-zstyle ':completion:*:*:git:*' script ~/.gittools/git-completion.zsh
 setopt PROMPT_SUBST ; PS1='[%n@%m %c$(__git_ps1 " (%s)")]\$ '
+autoload -Uz compinit && compinit
 
 # Go
 export GOPATH=$HOME/Go
