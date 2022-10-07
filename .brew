@@ -18,7 +18,6 @@ brew install --cask 1password
 brew install --cask the-unarchiver
 brew install --cask spectacle
 brew install --cask slack
-brew install --cask spark
 
 # editors
 brew install --cask visual-studio-code
