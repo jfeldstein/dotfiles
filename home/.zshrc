@@ -20,8 +20,8 @@ setopt PROMPT_SUBST ; PS1='%c$(__git_ps1 " (%s)") \$ '
 autoload -Uz compinit && compinit
 
 # Go
-export GOPATH=$HOME/Go
-export GOROOT=/usr/local/opt/go/libexec
+export GOPATH=$HOME/go
+export GOROOT="$(brew --prefix golang)/libexec"
 export FIRST_GO_PATH=$GOPATH
 PATH=$PATH:$GOPATH/bin
 PATH=$PATH:$GOROOT/bin
