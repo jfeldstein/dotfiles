@@ -4,6 +4,9 @@
 # install common dev tools
 ./.brew
 
+# install Go
+./.go
+
 # install rvm:
 \curl -sSL https://get.rvm.io | bash
 
