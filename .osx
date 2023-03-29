@@ -38,8 +38,9 @@ defaults write com.apple.frameworks.diskimages skip-verify -bool true
 defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true
 defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
 
-# Avoid creating .DS_Store files on network volumes
+# Avoid creating .DS_Store files on network volumes or external drives
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
 # Show the ~/Library folder
 chflags nohidden ~/Library
@@ -169,6 +170,8 @@ defaults write com.apple.menuextra.battery ShowPercent YES
 # defaults write com.apple.BezelServices kDim -bool <%- osx.general_illuminate %>  # Does not work on new macs
 # Turn off keyboard illumination when computer is not used for 5 minutes
 defaults write com.apple.BezelServices kDimTime -int 300
+
+
 
 
 # Menu Extras
