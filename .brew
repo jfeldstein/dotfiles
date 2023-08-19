@@ -9,10 +9,6 @@ brew install diff-so-fancy
 brew install wget
 brew install pyenv pyenv-virtualenv
 
-# install brew cask:
-brew tap homebrew/cask
-brew tap homebrew/cask-versions
-
 # essentials
 brew install --cask 1password
 brew install --cask the-unarchiver
