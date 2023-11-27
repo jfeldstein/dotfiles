@@ -5,10 +5,11 @@ brew install gh
 brew install git-extras
 brew install git-secrets
 brew install diff-so-fancy
-
 brew install wget
+
 brew install pyenv pyenv-virtualenv 
 brew install xz
+pyenv install 3.9:latest
 
 # essentials
 brew install --cask 1password
