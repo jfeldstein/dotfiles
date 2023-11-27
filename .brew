@@ -7,7 +7,8 @@ brew install git-secrets
 brew install diff-so-fancy
 
 brew install wget
-brew install pyenv pyenv-virtualenv
+brew install pyenv pyenv-virtualenv 
+brew install xz
 
 # essentials
 brew install --cask 1password
