@@ -14,7 +14,7 @@ pyenv install 3.9:latest
 # essentials
 brew install --cask 1password
 brew install --cask the-unarchiver
-brew install --cask spectacle
+brew install --cask rectangle
 brew install --cask slack
 
 # editors
