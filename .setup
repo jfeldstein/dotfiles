@@ -12,13 +12,15 @@
 
 # install nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Install dotfiles
 rsync -av ./home/ ~/
 
 # Init VS Code settings
 mv home/.vscode/settings.json ~/Library/Application\ Support/Code/User/
-for d in ~/.vscode/extensions/*; do ( cd "$d" && npm install); done
 
 # setup osx preferences:
 ./.osx
