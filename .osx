@@ -187,3 +187,7 @@ killall SystemUIServer
 killall Finder
 
 echo 'Done writing OS X defaults!'
+
+echo 'Linking downloads to icloud'
+sudo rm -rf /Users/jordan/Downloads
+ln -sf  /Users/jordan/Library/Mobile\ Documents/com\~apple\~CloudDocs/Downloads /Users/jordan/Downloads
