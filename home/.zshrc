@@ -19,6 +19,17 @@ PYTHONDONTWRITEBYTECODE=1
 setopt PROMPT_SUBST ; PS1='%c$(__git_ps1 " (%s)") \$ '
 autoload -Uz compinit && compinit
 
+# history setup
+setopt SHARE_HISTORY
+HISTFILE=$HOME/.zhistory
+SAVEHIST=1000
+HISTSIZE=999
+setopt HIST_EXPIRE_DUPS_FIRST
+
+# autocompletion using arrow keys (based on history)
+bindkey '\e[A' history-search-backward
+bindkey '\e[B' history-search-forward
+
 # Go
 export GOPATH=$HOME/go
 export GOROOT="$(brew --prefix golang)/libexec"
