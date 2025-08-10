@@ -19,8 +19,8 @@ export NVM_DIR="$HOME/.nvm"
 # Install dotfiles
 rsync -av ./home/ ~/
 
-# Init VS Code settings
-mv home/.vscode/settings.json ~/Library/Application\ Support/Code/User/
+# Install Cursor-Agent
+curl https://cursor.com/install -fsS | bash
 
 # setup osx preferences:
 ./.osx
