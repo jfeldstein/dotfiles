@@ -3,8 +3,8 @@ bindkey "[C" forward-word
 bindkey "^[a" beginning-of-line
 bindkey "^[e" end-of-line
 
-# VSCode's "code" command
-export PATH="$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin"
+# Location of Cursor's cursor-agent
+PATH="$HOME/.local/bin:$PATH
 
 # Misc exports
 export NODE_ENV=development
