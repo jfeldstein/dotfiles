@@ -1,0 +1,43 @@
+{
+    "window.commandCenter": 1,
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/venv": true,
+        "node_modules": true
+    },
+    "python.createEnvironment.trigger": "off",
+    "workbench.settings.applyToAllProfiles": [
+        "cursor.general.enableShadowWorkspace"
+    ],
+    "cursor.general.gitGraphIndexing": "enabled",
+    "search.quickOpen.includeSymbols": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "redhat.telemetry.enabled": true,
+    "http.electronFetch": true,
+    "cursor.composer.shouldAllowCustomModes": true,
+    "cursor.general.enableShadowWorkspace": true,
+    "cursor.general.globalCursorIgnoreList": [
+        "**/.env",
+        "**/.env.*",
+        "**/credentials.json",
+        "**/credentials.*.json",
+        "**/secret.json",
+        "**/secrets.json",
+        "**/*.key",
+        "**/*.pem",
+        "**/*.pfx",
+        "**/*.p12",
+        "**/*.crt",
+        "**/*.cer",
+        "**/id_rsa",
+        "**/id_dsa",
+        "**/.ssh/id_*",
+        "!**/.env.sample"
+    ],
+    "makefile.configureOnOpen": false,
+    "update.releaseTrack": "prerelease",
+    "cursor.cpp.enablePartialAccepts": true,
+    "go.toolsManagement.autoUpdate": true
+}
