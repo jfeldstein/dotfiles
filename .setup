@@ -22,6 +22,9 @@ rsync -av ./home/ ~/
 # Install Cursor-Agent
 curl https://cursor.com/install -fsS | bash
 
+# Install .cursor/settings
+mv -r home/.cursor ~/.cursor
+
 # setup osx preferences:
 ./.osx
 
