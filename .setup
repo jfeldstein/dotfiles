@@ -25,6 +25,10 @@ mkdir -p ~/Code
 [ -d ~/Code/claude-projects ] || gh repo clone jfeldstein/claude-projects ~/Code/claude-projects -- --recurse-submodules
 bash ~/Code/claude-projects/scripts/link-dot-claude-into-home.sh
 
+# Install the Hermes + Home Assistant setup (private repo, needs gh auth); fill the secret files it creates afterwards
+[ -d ~/Code/hermes-setup ] || gh repo clone jfeldstein/hermes-setup ~/Code/hermes-setup
+bash ~/Code/hermes-setup/bootstrap.sh
+
 # Init VS Code settings
 mv home/.vscode/settings.json ~/Library/Application\ Support/Code/User/
 
